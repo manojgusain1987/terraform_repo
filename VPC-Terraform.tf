@@ -1,35 +1,5 @@
-VPC USING TERRAFORM
-====================
-STEPS TO CREATE VPC
-----------------------------------
-VPC
-====
-my-vpc = 10.0.0.0/16
+#VPC USING TERRAFORM
 
-SUBNET
-======= 
-public-subnet =  10.0.1.0/24
-private-subnet = 10.0.2.0/24
-
-INETRNET GATEWAY
-=================
-igw = 10.10.11.10
-
-ROUTE TABLE
-============
-public-rt = 10.0.1.0/24 =>0.0.0.0/0
-
-INSTANCE IN PUBLIC AND PRIVATE SUBNET
-====================================
-webserver = 10.0.1.3/24 with route to internet by internet gateway
-databaseserver= 10.0.2.3/24 with no internet
-
-FOR UPDATION IN DATABASE SERVER WE ATTACH NAT GATEWAY
-=====================================================
-nat-gateway 10.0.2.0/24 with route to internet by nat gatway 0.0.0.0/0
-
-HERE IS THE CODE FOR TERRAFORM
-================================
 #provider defination like AWS
 provider "aws" {
   region     = "us-west-1"
